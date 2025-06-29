@@ -18,7 +18,7 @@ class Book:
 class EBook(Book):
     def __init__(self, title, author, isbn, download_size):
         super().__init__(title, author, isbn)
-        self.download_size = download_size  # in MB
+        self.download_size = download_size
 
     def __str__(self):
         return f"{self.title} by {self.author} (eBook, {self.download_size}MB)"
@@ -78,12 +78,10 @@ class LibraryApp:
         self.update_book_list()
 
     def _create_widgets(self):
-        # --- Frames for grouping ---
         self.input_frame = ttk.LabelFrame(self.root, text="Add New Book", padding=(15, 10))
         self.action_frame = ttk.LabelFrame(self.root, text="Library Actions", padding=(15, 10))
         self.list_frame = ttk.LabelFrame(self.root, text="Library Inventory", padding=(15, 10))
 
-        # --- Input fields ---
         self.title_label = ttk.Label(self.input_frame, text="Title:")
         self.title_entry = ttk.Entry(self.input_frame, width=40)
         self.author_label = ttk.Label(self.input_frame, text="Author:")
